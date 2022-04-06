@@ -50,7 +50,7 @@ class Register extends Component {
         error: 1,
       });
     } else {
-      fetch("http://localhost:3000/api/v1/register", {
+      fetch("https://onodera-backend.herokuapp.com/api/v1/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
