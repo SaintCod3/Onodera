@@ -411,7 +411,7 @@ class Manga extends Component {
         <Container>
           <Row>
             <Col lg={12}>
-              <h3 className="font-weight-light mt-2">My Collection</h3>
+              <h3 className="font-weight-light mt-2">Volumes</h3>
               <hr />
               <ListGroup className="mb-4">
                 {this.state.volumenes.map((volumen, i) => (
