@@ -359,43 +359,17 @@ class Manga extends Component {
                           }
                         />
                         <hr />
-                        <Row className="text-left mb-2">
-                          <Col>
-                            {item.publicando === true ? (
-                              <div>
-                                <Button
-                                  variant="onodera"
-                                  onClick={() => this.addVolumenesModal()}
-                                >
-                                  Add volumes
-                                </Button>
-                              </div>
-                            ) : (
-                              ""
-                            )}
-                          </Col>
-                        </Row>
+
                         <Row className="text-left">
                           <Col>
-                            {this.state.volumenesOwned.length - 1 ===
-                              item.numtomostotales &&
-                            this.state.completado === false ? (
-                              <div>
-                                <Button
-                                  variant="outline-success"
-                                  onClick={() => this.completeClick()}
-                                >
-                                  Complete
-                                </Button>
-                              </div>
-                            ) : this.state.volumenesOwned.length - 1 ===
-                                item.numtomostotales &&
-                              this.state.completado === true ? (
-                              <div>
-                                <Button variant="outline-success" disabled>
-                                  Completed
-                                </Button>
-                              </div>
+                            {item.publicando === true ? (
+                              <Button
+                                variant="onodera"
+                                onClick={() => this.addVolumenesModal()}
+                                className="mr-4"
+                              >
+                                Add volumes
+                              </Button>
                             ) : (
                               ""
                             )}
@@ -406,6 +380,24 @@ class Manga extends Component {
                             >
                               Delete
                             </Button>
+                            {this.state.volumenesOwned.length - 1 ===
+                              item.numtomostotales &&
+                            this.state.completado === false ? (
+                              <Button
+                                variant="outline-success"
+                                onClick={() => this.completeClick()}
+                              >
+                                Complete
+                              </Button>
+                            ) : this.state.volumenesOwned.length - 1 ===
+                                item.numtomostotales &&
+                              this.state.completado === true ? (
+                              <Button variant="outline-success" disabled>
+                                Completed
+                              </Button>
+                            ) : (
+                              ""
+                            )}
                           </Col>
                         </Row>
                       </Col>
