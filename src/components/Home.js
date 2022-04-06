@@ -76,7 +76,7 @@ class Home extends Component {
       fetch(
         "https://api.jikan.moe/v4/manga?q=" +
           this.state.search +
-          "&type=manga&page=1"
+          "&type=manga&page=1&genres_exclude=12,26,28"
       )
         .then((response) => response.json())
         .then((data) =>
