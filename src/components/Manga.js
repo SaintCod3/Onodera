@@ -315,14 +315,7 @@ class Manga extends Component {
                           {item.title} -{" "}
                           <span className="font-weight-light">
                             {item.author}
-                          </span>{" "}
-                          <Button
-                            variant="outline-danger"
-                            className="right"
-                            onClick={() => this.deleteModal()}
-                          >
-                            Delete
-                          </Button>
+                          </span>
                         </h4>
                         <hr />
                         <p>
@@ -406,6 +399,13 @@ class Manga extends Component {
                             ) : (
                               ""
                             )}
+                            <Button
+                              variant="outline-danger"
+                              className="right"
+                              onClick={() => this.deleteModal()}
+                            >
+                              Delete
+                            </Button>
                           </Col>
                         </Row>
                       </Col>
