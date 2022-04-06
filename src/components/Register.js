@@ -44,7 +44,10 @@ class Register extends Component {
       passwordConfirmation,
     } = this.state;
 
-    if (password !== passwordConfirmation && password.length < 8) {
+    if (
+      (password == passwordConfirmation && password.length < 8) ||
+      (password !== passwordConfirmation && password.length < 8)
+    ) {
       this.setState({
         alert: true,
         error: 1,
@@ -104,7 +107,7 @@ class Register extends Component {
             <Toast.Body>
               {error === 0
                 ? msg
-                : "Missing Parameter(s), please make sure that you have added all the information and uploaded an avatar and your GovID"}
+                : "Missing Parameter(s), please ensure that your password is at least 8 character long and that the confirmation password match"}
             </Toast.Body>
           </Toast>
           <Row>
