@@ -20,6 +20,7 @@ import Navigation from "./Navigation";
 class Collection extends Component {
   ref = React.createRef(); // creating the ref for the Observer API element
   refComplete = React.createRef(); // creating the ref for the Observer API element for the section "complete"
+  scrollToTopRef = React.createRef(); // ref to scroll
 
   constructor(props) {
     super(props);
@@ -60,6 +61,13 @@ class Collection extends Component {
   onChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+    });
+  };
+
+  scrollToTop = (e) => {
+    this.scrollToTopRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
     });
   };
 
@@ -250,7 +258,7 @@ class Collection extends Component {
       <>
         <style type="text/css">{this.custom()}</style>
         <Navigation />
-        <Jumbotron className="searchContainer">
+        <Jumbotron className="searchContainer" ref={this.scrollToTopRef}>
           <Container>
             <Row>
               <Col>
@@ -284,6 +292,14 @@ class Collection extends Component {
             </Row>
           </Container>
         </Jumbotron>
+        <div
+          className="scrollTop"
+          onClick={() => {
+            this.scrollToTop();
+          }}
+        >
+          Top
+        </div>
         <Container>
           <Row>
             <Col lg={12}>

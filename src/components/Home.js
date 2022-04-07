@@ -20,6 +20,7 @@ import Navigation from "./Navigation";
 
 class Home extends Component {
   ref = React.createRef(); // creating the ref for the Observer API element
+  scrollToTopRef = React.createRef(); // ref to scroll
 
   constructor(props) {
     super(props);
@@ -114,6 +115,12 @@ class Home extends Component {
     });
   };
 
+  scrollToTop = (e) => {
+    this.scrollToTopRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+    });
+  };
   onCloseError = (e) => {
     this.setState({ error: false });
   };
@@ -233,7 +240,7 @@ class Home extends Component {
 
         <Navigation />
 
-        <Jumbotron className="searchContainer">
+        <Jumbotron className="searchContainer" ref={this.scrollToTopRef}>
           <Container>
             <Row>
               <Col>
@@ -267,6 +274,15 @@ class Home extends Component {
             </Row>
           </Container>
         </Jumbotron>
+
+        <div
+          className="scrollTop"
+          onClick={() => {
+            this.scrollToTop();
+          }}
+        >
+          Top
+        </div>
         <Container>
           <Row>
             <Col lg={12}>
