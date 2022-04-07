@@ -311,10 +311,7 @@ class Collection extends Component {
                 onSelect={(key) => this.setCurrentTab(key)}
                 className="mb-3"
               >
-                <Tab
-                  eventKey="All"
-                  title={"All " + "(" + this.state.items.length + ")"}
-                >
+                <Tab eventKey="All" title="All">
                   <div>
                     {this.state.loading || !this.state.items ? (
                       <div>Loading...</div>
