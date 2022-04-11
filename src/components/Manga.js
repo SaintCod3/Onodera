@@ -10,6 +10,7 @@ import {
   Button,
   Toast,
   ProgressBar,
+  Breadcrumb,
   ListGroup,
 } from "react-bootstrap";
 import { withRouter, Redirect } from "react-router-dom";
@@ -299,6 +300,12 @@ class Manga extends Component {
         <Navigation />
         <Jumbotron className="header">
           <Container>
+            <Breadcrumb>
+              <Breadcrumb.Item href="/collection">
+                My Collection
+              </Breadcrumb.Item>
+              <Breadcrumb.Item active>{this.state.title}</Breadcrumb.Item>
+            </Breadcrumb>
             <Row>
               {this.state.loading || !this.state.items ? (
                 <div>Loading...</div>
