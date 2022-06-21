@@ -21,24 +21,27 @@ input:focus {
   background-color: transparent;
 }
 
+
 .mangas {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
+
 .manga {
-  flex: 0 20px 200px;
+  flex: 0 20px 100px;
   margin: 10px;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
   position: relative;
 }
+
 .manga img {
-  min-width: 200px !important;
-  min-height: 307px !important;
-  max-width: 200px !important;
-  max-height: 307px !important;
+  min-width: 200px ;
+  min-height: 307px ;
+  max-width: 200px ;
+  max-height: 307px ;
 }
 
 .manga .over {
@@ -77,6 +80,17 @@ input:focus {
 .manga:hover {
   cursor: pointer;
   border-color: rgba(52, 85, 138, 1);
+}
+
+@media only screen and (max-width: 992px) {
+
+  .manga img {
+    min-width: 150px;
+    min-height: 220px;
+    max-width: 150px;
+    max-height: 220px;
+  }
+
 }
 
 .rightSide {
@@ -135,6 +149,7 @@ input:focus {
   max-width: 200px !important;
   max-height: 307px !important;
 }
+
 .navbar-light .navbar-nav .nav-link {
   color: white;
   font-weight: lighter;
@@ -223,11 +238,10 @@ input:focus {
 }
 
 .scrollTop {
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 25px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  background-color: transparent;
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+  z-index: 99;
   padding: 0.375rem 0.75rem;
   width: auto;
   border: 1px solid rgba(52, 85, 138, 1);
@@ -237,7 +251,8 @@ input:focus {
   text-decoration: none;
   color: rgba(52, 85, 138, 1);
   border-radius: 0.25rem;
-  cursor: pointer; /* Add a mouse pointer on hover */
+  cursor: pointer;
+  background-color: #fff;
 }
 
 .breadcrumb {
@@ -251,7 +266,7 @@ input:focus {
   line-height: 1.5;
   font-size: 1rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   text-decoration: none;
   border-radius: 0.25rem;
   background-color: rgba(52, 85, 138, 1);
